@@ -1,0 +1,60 @@
+# Site Infos
+title: "Testing Jekyll, pandoc, and Tufte CSS"
+description: "See jez/tufte-pandoc-jekyll"
+theme: tufte-pandoc-jekyll
+
+# Site Setup
+permalink: /:categories/:title/
+paginate: 8
+paginate_path: /page/:num/
+
+# Jekyll Setup
+full_rebuild: true
+encoding: utf-8
+excerpt_separator: "<!-- more -->"
+exclude: [.git, .gitignore, .sass-cache, README.md, Gemfile, Gemfile.lock]
+
+# gems setup
+gems:
+  - jekyll-pandoc
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+
+# pandoc setup
+markdown: Pandoc
+pandoc:
+  extensions:
+    - section-divs
+    - from: 'markdown+tex_math_single_backslash'
+    - filter: 'pandoc-sidenote'
+
+# Default templates for posts and pages
+post_layout: post
+page_layout: page
+draft_layout: post
+
+# Format titles with titlecase?
+titlecase: true
+
+# Change default template file (in _templates/)
+post_template: post
+page_template: page
+draft_template: post
+
+# Jekyll-archives plugin setup
+# jekyll-archives:
+#   enabled:
+#     - categories
+#     - tags
+#     - year
+#   layouts:
+#     category: category_index
+#     tag: tag_index
+#     year: archive_index
+#   permalinks:
+#     category: '/category/:name/' #should be in tag_dir above
+#     tag: '/tag/:name/'  #should be in category_dir above
+#     year: '/archive/:year/'
